@@ -3,6 +3,7 @@ export enum EBlockTypes{
     mainBlock = "mainBlock",
     additionalBlocks = "additionalBlocks",
     singleBlocks = "singleBlocks",
+    priceBlock = "priceBlock",
 }
 
 export enum DynamicBlockThemes{
@@ -11,6 +12,8 @@ export enum DynamicBlockThemes{
     textBlock = "textBlock",
     textOnlyBlock = "textOnlyBlock",
     imageOnlyBlock = "imageOnlyBlock",
+    advantagesBlock = "advantagesBlock",
+    priceBlock = "priceBlock",
 }
 
 export enum InputFieldNames{
@@ -20,6 +23,12 @@ export enum InputFieldNames{
     text = "text",
     image = "image",
     list = "list",
+    titleSecond = "titleSecond",
+    textSecond = "textSecond",
+    priceOneValue = "priceOneValue",
+    priceTwoValue = "priceTwoValue",
+    priceOneText = "priceOneText",
+    priceTwoText = "priceTwoText",
     notRenderInList = "notRenderInList",
 }
 
@@ -34,6 +43,12 @@ export interface ISingleBlockState{
     [InputFieldNames.text]?: string;
     [InputFieldNames.image]?: string;
     [InputFieldNames.list]?: ListParamState;
+    [InputFieldNames.titleSecond]?: string;
+    [InputFieldNames.textSecond]?: string;
+    [InputFieldNames.priceOneValue]?: number;
+    [InputFieldNames.priceTwoValue]?: number;
+    [InputFieldNames.priceOneText]?: string;
+    [InputFieldNames.priceTwoText]?: string;
     [InputFieldNames.notRenderInList]?: boolean;
 }
 
@@ -48,6 +63,7 @@ export interface IBlockListProps{
 export type TStaticBlocksState = {
     [EBlockTypes.footerBlock]?: ISingleBlockState;
     [EBlockTypes.mainBlock]?: ISingleBlockState;
+    [EBlockTypes.priceBlock]?: ISingleBlockState;
 };
 export type TDynamicBlocksState = {
     [EBlockTypes.additionalBlocks]?: {

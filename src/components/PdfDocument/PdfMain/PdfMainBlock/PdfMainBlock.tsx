@@ -15,9 +15,9 @@ const PdfMainBlock:FC = () => {
         const advList = state[InputFieldNames.list];
         for (let key in advList) {
             items.push(
-                <View>
+                <View key={key}>
                     <Text style={styles.mainBlockListItemDot}> </Text>
-                    <Text key={key} style={styles.mainBlockListItem}>
+                    <Text style={styles.mainBlockListItem}>
                         {advList[Number(key)]}
                     </Text>
                 </View>
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
         color: theme.colors.textDark,
     },
     mainBlockLeftTitleBlue:{
+        fontFamily: "Roboto-SemiBold",
         fontWeight: 700,
         color: theme.colors.textBlue,
     },

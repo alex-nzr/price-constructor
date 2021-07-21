@@ -31,6 +31,11 @@ const useInput = (props: IInputNodeProps) => {
             }
         }
 
+        if (e.target.type === "number"){
+            newValue > 9999999 ? newValue = 9999999 : void(0);
+            newValue < 0 ? newValue = 0 : void(0);
+        }
+
         dispatch(
             changeBlockDataAction(
                 isDynamic ? props.id : undefined,

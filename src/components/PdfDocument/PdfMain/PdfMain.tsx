@@ -2,6 +2,7 @@ import React from 'react';
 import PdfMainBlock from "./PdfMainBlock/PdfMainBlock";
 import BlocksList from "../../Main/BlocksList/BlocksList";
 import {StyleSheet, View} from "@react-pdf/renderer";
+import PdfPriceBlock from "./PdfPriceBlock/PdfPriceBlock";
 
 const styles = StyleSheet.create({
     pdfMain:{
@@ -13,9 +14,14 @@ const styles = StyleSheet.create({
 
 const PdfMain = () => {
     return (
-        <View style={styles.pdfMain}>
-            <PdfMainBlock/>
-            <BlocksList forPdf={true}/>
+        <View>
+            <View style={styles.pdfMain}>
+                <PdfMainBlock/>
+                <BlocksList forPdf={true}/>
+            </View>
+            <View wrap={false}>
+                <PdfPriceBlock/>
+            </View>
         </View>
     );
 };

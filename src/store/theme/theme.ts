@@ -6,6 +6,7 @@ export const theme = {
         textDark: "#333",
         textBlue: "#00AEEF",
         textWhite: "#FFF",
+        textBlack: "#000",
         popupOverlayBg: "rgba(0, 174, 239, .5)",
         primaryBtnColor: "#025ea1",
         primaryBtnHoverColor: "#0C152E",

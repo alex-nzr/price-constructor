@@ -17,6 +17,9 @@ const StyledSingleBlock = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  & input{
+    margin-top: 5px;
+  }
 `;
 
 const SingleBlock:FC<ISingleBlockProps> = ({...props}) => {
@@ -43,9 +46,11 @@ const SingleBlock:FC<ISingleBlockProps> = ({...props}) => {
             }
             switch (propName) {
                 case InputFieldNames.title:
+                case InputFieldNames.titleSecond:
                     blockLeft.push(<InputText type="text" maxLength={200} {...generalProps}/>);
                     break;
                 case InputFieldNames.text:
+                case InputFieldNames.textSecond:
                     blockLeft.push(<Textarea maxLength={500} type={`textarea`} {...generalProps}/>);
                     break;
                 case InputFieldNames.list:

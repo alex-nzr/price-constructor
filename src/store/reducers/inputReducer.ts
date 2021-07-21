@@ -43,6 +43,7 @@ export const inputReducer = (state = inputDefaultState, action:TBlockAction) => 
 
 export const changeBlockDataAction = (dynamicBlockType:EBlockTypes | undefined, BlockData:ISingleBlockState):TBlockAction => {
     const type = dynamicBlockType ? BlockActionTypes.CHANGE_ADDITIONAL_BLOCKS : BlockActionTypes.CHANGE_SINGLE_BLOCK;
+    //console.log(BlockData)
     return {
         type: type,
         payload: BlockData

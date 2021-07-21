@@ -11,9 +11,9 @@ const StyledLabel = styled.label`
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 300px;
+  height: auto;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-color: ${props => props.theme.colors.textBlue};
   box-shadow: inset 2px 2px 4px rgba(190, 205, 226, 0.8);
@@ -26,7 +26,10 @@ const StyledLabel = styled.label`
     overflow: hidden;
   }
   & span{
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     font-size: 18px;
     font-weight: 700;
     color: ${props => props.theme.colors.textDark};
@@ -35,6 +38,15 @@ const StyledLabel = styled.label`
     z-index: 1;
     opacity: 0;
     user-select: none;
+  }
+  & img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 6px;
+    overflow: hidden;
   }
   &:hover{
     &:before{
@@ -66,9 +78,10 @@ const InputFile:FC<IInputNodeProps> = ({...props}) => {
     const inputParams = useInput(props);
 
     return (
-        <StyledLabel htmlFor={inputParams.id} style={{backgroundImage: `url(${stateImage})`}}>
+        <StyledLabel htmlFor={inputParams.id}>
             <span>Click to upload your image</span>
             <input {...inputParams}/>
+            <img src={stateImage} alt=""/>
         </StyledLabel>
     );
 };

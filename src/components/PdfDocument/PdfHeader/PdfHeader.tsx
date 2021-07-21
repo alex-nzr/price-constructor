@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
             logoText:{
                 marginTop: 10,
                 fontSize: 7.5,
+                fontFamily: "Roboto-SemiBold",
             }
         },
     },

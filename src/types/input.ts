@@ -2,7 +2,7 @@ import {EBlockTypes} from "./content-blocks";
 
 export interface IInputNodeProps {
     id: EBlockTypes,
-    type: "text" | "file" | 'textarea',
+    type: "text" | "file" | 'textarea' | "number",
     maxLength?: number;
     isDynamic?: boolean;
     singleBlockId? : string;

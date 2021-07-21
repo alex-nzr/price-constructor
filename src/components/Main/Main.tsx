@@ -1,15 +1,9 @@
 import React, {FC} from 'react';
-import {useDispatch} from "react-redux";
-import {togglePopupAction} from "../../store/reducers/popupReducer";
-import {PopupIDs} from "../../types/popup";
-import Button from "./Button/Button";
-import {ButtonTypes} from "../../types/button";
 import styled from "styled-components";
 import MainBlock from "./MainBlock/MainBlock";
 import BlocksList from "./BlocksList/BlocksList";
-import PdfDocument from "../PdfDocument/PdfDocument";
-import {PDFDownloadLink} from "@react-pdf/renderer";
 import PdfActionButton from "../PdfActionsButtons/PdfActionButton";
+import PriceBlock from "./PriceBlock/PriceBlock";
 
 const StyledMain = styled.div`
   padding: 20px;
@@ -27,6 +21,7 @@ const Main: FC = () => {
             <StyledMain>
                 <MainBlock/>
                 <BlocksList forPdf={false}/>
+                <PriceBlock/>
             </StyledMain>
         </React.Fragment>
     );
